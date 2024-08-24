@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400&display=swap');
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*  font-family: "Poppins", sans-serif; */
+/*font-family: "Playfair Display", serif; */
+
+/*//navbar css */
+.navbar{
+  font-family: "Poppins", sans-serif;
+  font-size: 17px;
+  line-height: 26px;
+  text-transform: uppercase;
+  box-shadow: 0 8px 6px -6px grey;
+  --webkit-box-shadow: 0 8px 6px -6px grey;
+  border-bottom: solid grey !important;
+  
+}
+
+.nav-link{
+  font-weight: 300 !important;
+}
+
+.active{
+  border-bottom: 2px solid black ;
+}
+
+.navbar-brand{
+  font-weight: 700;
+  font-family: 'roboto', sans-serif;
+  letter-spacing: 3px;
+}
+.nav-items{
+  display: flex;
+  align-items: center;
+  
+}
+
+/*//footer*/
+
+.footer{
+  color: white;
+  padding: 25px;
+  background: #000000;
+  background: -webkit-linear-gradient(
+    to right,
+    #434343,
+    #000000
+  );
+  background: linear-gradient(to right, #434343, #000000);
+
+}
+
+.footer a{
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+
+}
+
+.footer a:hover{
+   color: #ffefba;
+   border-bottom: 1px solid #ffefba;
+}
+
+.pnf{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 65vh;
+}
+.pnf-title{
+  font-size: 100px;
+  font-weight: 700;
+}
+.pnf-heading{
+  font-weight: normal;
+}
+.pnf-btn{
+  color: black;
+  text-decoration: none;
+  border: 1px solid black;
+  padding: 10px;
+  margin-top: 10px;
+  
+}
+
+
+
+/*//products*/
+.product-link{
+  text-decoration: none !important;
+  color: black !important;
+}
+
+/*//homepage*/
+.home-page{
+  display: flex;
+  flex-wrap: wrap;
+}
+.home-page h1{
+  color: grey;
+  font-family: "Playfair Display",serif;
+}
+.home-page .card {
+  background-color: rgba(128, 128, 128, 0.097);
+  width: 18rem;
+}
+.home-page .card-price {
+  color: green;
+  font-weight: bold;
+}
+
+.home-page .card-text {
+  color: rgb(90, 89, 89);
+}
+
+.home-page .card img:hover {
+  transform: scale(0.9);
+}
+
+.filters h4 {
+  margin-top: 50px;
+  color: gray !important;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.337);
+}
+.filters button {
+  background-color: black;
+  width: 100%;
+  border: none;
+  border-radius: 0;
+  margin-top: 20px;
+}
+
+.loadmore {
+  color: green;
+  font-weight: bold;
+  font-size: 20px !important;
+}
+
+/*cart*/
+.cart-page {
+  margin-top: 64px;
+}
+
+.cart-page h1 {
+  padding: 15px !important;
+  font-family: "roboto", sans-serif;
+  font-weight: normal;
+  background-color: rgba(0, 0, 255, 0.072) !important;
+}
+.cart-page h1 > p {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.cat-btn {
+  padding: 40px 0px;
+  font-size: 24px;
+  text-transform: uppercase;
+}
+.cat-btn:hover {
+  background-color: #434343;
+  color: white;
+}
+
+.category .card-price{
+  color: green;
+  font-weight: bold;
+}
+.category .card{
+  background-color: rgba(128, 128, 128, 0.097);
+  width: 18rem;
+}
+.category .card img:hover {
+  transform: scale(0.9);
+}
+.category .heading{
+  padding: 15px !important;
+  font-family: "roboto", sans-serif;
+  font-weight: normal;
+  background-color: rgba(14, 14, 175, 0.267) !important;
+  color: black;
+}
+
+/*product details*/
+.product-details {
+  margin-top: 100px !important;
+}
+.product-details .card img:hover {
+  transform: scale(0.9);
+}
+
+.product-details-info {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: center;
+}
+
+.product-details-info h6 {
+  margin-bottom: 20px !important;
+}
+
+.similar-products .card-price{
+  color: green;
+  font-weight: bold;
+}
+.similar-products .card {
+  background-color: rgba(128, 128, 128, 0.097);
+  width: 18rem;
+}
+.dashboard-menu h4 {
+  background-color: #434343 !important;
+  color: white;
+  padding: 20px 0px;
+}
+.products .card img:hover{
+  transform: scale(0.9);
+}
+.order-img .card img:hover{
+  transform: scale(0.9);
+}
+.user-orders .card img:hover{
+  transform: scale(0.9);
+}
+.carousel-inner img {
+  height: 400px;
+  object-fit: cover;
+}
+.horizontal-slider {
+  overflow-x: auto;
+  white-space: nowrap;
+  padding-bottom: 10px;
+  margin-top: 20px;
+}
+
+.slider-content img {
+  display: inline-block;
+  height: 150px; /* Adjust height as needed */
+  margin-right: 10px;
+  object-fit: cover;
+  border-radius: 5px; /* Optional: for rounded corners */
+}
+
+.slider-content img:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+.search-product .card img:hover{
+  transform: scale(0.9);
+}

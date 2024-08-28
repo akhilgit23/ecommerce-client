@@ -1,8 +1,8 @@
 import React,{useState} from 'react'
 import Layout from '../../components/Layout/Layout';
-import axios from 'axios'
 import {useNavigate} from 'react-router-dom'
 import toast from 'react-hot-toast'
+import { axiosInstance } from '../../config/axiosInstance';
 
 const Register = () => {
 
@@ -18,8 +18,11 @@ const Register = () => {
     const handleSubmit = async (e)=>{
        e.preventDefault()
        try{
-             const res = await axios.post("/api/v1/auth/register",
-            {name,email,password,phone,address,answer});
+             const res = await axiosInstance({
+              url:"/auth/register",
+            method:"POST",
+          data: {name,email,password,phone,address,answer},
+          });
             if(res &&	res.data.success){
             toast.success(res.data && res.data.message);
               navigate("/login");

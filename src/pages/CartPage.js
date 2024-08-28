@@ -4,8 +4,8 @@ import { useCart } from '../context/Cart'
 import { useAuth } from '../context/auth'
 import { useNavigate } from 'react-router-dom'
 import DropIn from "braintree-web-drop-in-react";
-import axios from 'axios'
 import toast from 'react-hot-toast'
+import { axiosInstance } from '../config/axiosInstance'
 
 const CartPage = () => {
     const [auth,setAuth] = useAuth()
@@ -46,7 +46,10 @@ const CartPage = () => {
     //payment gateway token
     const getToken = async () => {
      try{
-         const {data} = await axios.get('/api/v1/product/braintree/token')
+         const {data} = await axiosInstance({
+            url:'/product/braintree/token',
+           method:"GET",
+        })
          setClientToken(data?.clientToken)
      }catch(error){
         console.log(error)
@@ -61,9 +64,13 @@ const CartPage = () => {
         try{
             setLoading(true)
            const {nonce} = await instance.requestPaymentMethod()
-           const {data} = axios.post('/api/v1/product/braintree/payment',{
+           const {data} = axiosInstance({
+            url:'/product/braintree/payment',
+           method:"POST",
+           data:{
             nonce,cart
-           })
+           },
+        })
            setLoading(false)
            localStorage.removeItem('cart')
            setCart([])

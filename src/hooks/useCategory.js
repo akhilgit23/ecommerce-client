@@ -1,5 +1,5 @@
 import { useState,useEffect } from "react";
-import axios from "axios";
+import { axiosInstance } from "../config/axiosInstance";
 
 export default function useCategory() {
     const [categories,setCategories] = useState([])
@@ -7,7 +7,11 @@ export default function useCategory() {
     //get category
     const getCategories = async () =>{
         try{
-            const {data} = await axios.get('/api/v1/category/get-category')
+            const {data} = await axiosInstance({
+                url:'/category/get-category',
+             method:"GET",
+             
+            })
             setCategories(data?.category)
         }catch(error){
             console.log(error)

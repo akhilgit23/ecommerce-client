@@ -1,9 +1,9 @@
 import React, {useState,useEffect} from 'react'
 import AdminMenu from '../../components/Layout/AdminMenu'
 import Layout from '../../components/Layout/Layout'
-import axios from 'axios'
 import toast from 'react-hot-toast'
 import { Link } from 'react-router-dom'
+import { axiosInstance } from '../../config/axiosInstance'
 
 
 
@@ -13,7 +13,10 @@ const Products = () => {
     //get all products
     const getAllProducts = async () =>{
         try{
-         const {data} = await axios.get('/api/v1/product/get-product')
+         const {data} = await axiosInstance({
+            url:'/product/get-product',
+          method:"GET",
+        })
          setProducts(data.products)
         }catch(error){
             console.log(error)

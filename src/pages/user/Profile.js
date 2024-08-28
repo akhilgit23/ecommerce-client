@@ -3,7 +3,7 @@ import Layout from '../../components/Layout/Layout'
 import UserMenu from '../../components/Layout/UserMenu'
 import { useAuth } from '../../context/auth'
 import toast from 'react-hot-toast';
-import axios from 'axios';
+import { axiosInstance } from '../../config/axiosInstance';
 
 const Profile = () => {
     //context
@@ -29,8 +29,11 @@ const Profile = () => {
      const handleSubmit = async (e)=>{
         e.preventDefault()
         try{
-              const {data} = await axios.put("/api/v1/auth/profile",
-             {name,email,password,phone,address});
+              const {data} = await axiosInstance({
+               url: "/auth/profile",
+             method:"PUT",
+            data:{name,email,password,phone,address},
+            });
              if(data?.error){
                 toast.error(data?.error)
              }else{

@@ -1,9 +1,9 @@
 import React,{useState} from 'react'
 import Layout from '../../components/Layout/Layout';
-import axios from 'axios'
 import {useNavigate,useLocation} from 'react-router-dom'
 import toast from 'react-hot-toast';
 import { useAuth } from '../../context/auth';
+import { axiosInstance } from '../../config/axiosInstance';
 
 const Login = () => {
     
@@ -18,8 +18,11 @@ const Login = () => {
      const handleSubmit = async (e)=>{
         e.preventDefault()
         try{
-              const res = await axios.post("/api/v1/auth/login",
-             {email,password});
+              const res = await axiosInstance({
+                url:"/auth/login",
+              method:"POST",
+            data:{email,password},
+            });
              if (res && res.data.success){
                toast.success(res.data && res.data.message);
                setAuth({

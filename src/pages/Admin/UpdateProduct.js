@@ -2,7 +2,7 @@ import React, {useState,useEffect} from 'react'
 import Layout from '../../components/Layout/Layout'
 import AdminMenu from '../../components/Layout/AdminMenu'
 import toast from 'react-hot-toast';
-import axios from 'axios';
+import { axiosInstance } from '../../config/axiosInstance';
 import { useNavigate,useParams } from 'react-router-dom';
 import {Select} from 'antd';
 const {Option} = Select
@@ -23,7 +23,10 @@ const UpdateProduct = () => {
     //get single product
     const getSingleProduct = async () =>{
         try{
-         const {data} = await axios.get(`/api/v1/product/get-product/${params.slug}`)
+         const {data} = await axiosInstance({
+          url:`/product/get-product/${params.slug}`,
+        method:"GET",
+        })
          setName(data.product.name);
          setId(data.product._id);
          setDescription(data.product.description);
@@ -44,7 +47,10 @@ const UpdateProduct = () => {
     //get all category
     const getAllCategory = async () =>{
       try{
-        const {data} = await axios.get('/api/v1/category/get-category')
+        const {data} = await axiosInstance({
+          url:'/category/get-category',
+        method:"GET",
+        })
         if(data?.success){
           setCategories(data?.category)
         }
@@ -71,7 +77,10 @@ const UpdateProduct = () => {
       photo && productData.append("photo",photo)
       productData.append("category",category)
       
-      const {data} = axios.put(`/api/v1/product/update-product/${id}`,productData)
+      const {data} = axiosInstance({
+        url:`/product/update-product/${id}`,productData,
+      method:"PUT",
+      })
       if(data?.success){
         toast.error(data?.message)
       }else{
@@ -89,7 +98,10 @@ const UpdateProduct = () => {
   try{
     let answer = window.prompt('Are you sure you want to delete this product?')
     if(!answer) return;
-    const {data} = await axios.delete(`/api/v1/product/delete-product/${id}`)
+    const {data} = await axiosInstance({
+      url:`/product/delete-product/${id}`,
+    method:"DELETE",
+    })
     toast.success('product Deleted Successfully')
     navigate('/dashboard/admin/products')
   }catch(error){

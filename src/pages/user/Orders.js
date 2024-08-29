@@ -3,7 +3,7 @@ import Layout from '../../components/Layout/Layout'
 import UserMenu from '../../components/Layout/UserMenu'
 import { useAuth } from '../../context/auth'
 import moment from 'moment'
-import { axiosInstance } from '../../config/axiosInstance'
+import axios from 'axios'
 
 const Orders = () => {
 
@@ -12,10 +12,7 @@ const Orders = () => {
 
   const getOrders = async () =>{
     try{
-       const {data} = await axiosInstance({
-        url:'/auth/orders',
-       method:"GET",
-      })
+      const { data } = await axios.get("/api/v1/auth/orders");
        setOrders(data)
     }catch(error){
       console.log(error)

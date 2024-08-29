@@ -5,7 +5,7 @@ import {Checkbox,Radio} from 'antd'
 import { Prices } from '../components/Prices';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../context/Cart';
-import { axiosInstance } from '../config/axiosInstance';
+import axios from 'axios';
 
 const HomePage = () => {
   const navigate = useNavigate()
@@ -24,10 +24,7 @@ const HomePage = () => {
    const getAllCategory = async () =>{
     
     try{
-      const {data} = await axiosInstance({
-        url: '/category/get-category',
-       method: "GET",
-      })
+      const { data } = await axios.get("/api/v1/category/get-category");
       if(data?.success){
         setCategories(data?.category)
       }
@@ -47,12 +44,10 @@ const HomePage = () => {
   const getAllProducts = async () =>{
     try{
       setLoading(true)
-     const {data} = await axiosInstance({
-      url:`/product/product-list/${page}`,
-    method: "GET",
-    })
+      const { data } = await axios.get(`/api/v1/product/product-list/${page}`);
      setLoading(false)
      setProducts(data.products)
+     
     }catch(error){
       setLoading(false)
       console.log(error)
@@ -63,10 +58,7 @@ const HomePage = () => {
    //get total count
   const getTotal = async () =>{
     try{
-       const {data} = await axiosInstance({
-        url:'/product/product-count',
-      method:"GET",
-      })
+      const { data } = await axios.get("/api/v1/product/product-count");
        setTotal(data?.total)
     }catch(error){
       console.log(error)
@@ -84,10 +76,7 @@ const HomePage = () => {
     
     try{
       setLoading(true)
-     const {data} = await axiosInstance({
-      url:`/product/product-list/${page}`,
-    method:"GET",
-    })
+      const { data } = await axios.get(`/api/v1/product/product-list/${page}`);
      setLoading(false)
      setProducts([...products, ...data?.products])
     }catch(error){
@@ -125,11 +114,10 @@ const HomePage = () => {
   //get filtered products
   const filterProduct = async () =>{
     try{
-      const {data} = await axiosInstance({
-        url:'/product/product-filters',
-        method:"POST",
-        data:{checked,radio},
-      })
+      const { data } = await axios.post("/api/v1/product/product-filters", {
+        checked,
+        radio,
+      });
       setProducts(data?.products)
     }catch(error){
       console.log(error)

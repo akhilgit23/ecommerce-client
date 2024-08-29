@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import Layout from '../../components/Layout/Layout';
 import {useNavigate} from 'react-router-dom'
 import toast from 'react-hot-toast';
-import { axiosInstance } from '../../config/axiosInstance';
+import axios from 'axios';
 
 const ForgotPassword = () => {
     
@@ -17,11 +17,11 @@ const ForgotPassword = () => {
      const handleSubmit = async (e)=>{
         e.preventDefault()
         try{
-              const res = await axiosInstance({
-                url:"/auth/forgot-password",
-              method:"POST",
-            data:{email,newPassword,answer}
-            });
+          const res = await axios.post("/api/v1/auth/forgot-password", {
+            email,
+            newPassword,
+            answer,
+          });
              if (res && res.data.success){
                toast.success(res.data && res.data.message);
               

@@ -3,7 +3,7 @@ import Layout from '../../components/Layout/Layout'
 import AdminMenu from '../../components/Layout/AdminMenu'
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
-import { axiosInstance } from '../../config/axiosInstance';
+import axios from 'axios';
 import {Select} from 'antd';
 const {Option} = Select
 
@@ -21,10 +21,7 @@ const CreateProduct = () => {
   //get all category
   const getAllCategory = async () =>{
     try{
-      const {data} = await axiosInstance({
-        url:'/category/get-category',
-      method:"GET",
-      })
+      const { data } = await axios.get("/api/v1/category/get-category");
       if(data?.success){
         setCategories(data?.category)
       }
@@ -51,10 +48,10 @@ const handleCreate = async (e) =>{
     productData.append("photo",photo)
     productData.append("category",category)
     
-    const {data} = axiosInstance({
-      url:'/product/create-product',productData,
-     method:"POST",
-    })
+    const { data } = axios.post(
+      "/api/v1/product/create-product",
+      productData
+    );
     if(data?.success){
       toast.error(data?.message)
     }else{

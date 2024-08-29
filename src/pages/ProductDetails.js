@@ -3,7 +3,7 @@ import Layout from '../components/Layout/Layout';
 import { useParams,useNavigate } from 'react-router-dom';
 import { useCart } from '../context/Cart';
 import toast from 'react-hot-toast';
-import { axiosInstance } from '../config/axiosInstance';
+import axios from 'axios';
 
 const ProductDetails = () => {
   const [cart, setCart] = useCart();
@@ -21,10 +21,9 @@ const ProductDetails = () => {
   // Get product details
   const getProduct = async () => {
     try {
-      const { data } = await axiosInstance({
-        url:`/product/get-product/${params.slug}`,
-       method:"GET",
-      });
+      const { data } = await axios.get(
+        `/api/v1/product/get-product/${params.slug}`
+      );
       setProduct(data?.product);
       getSimilarProduct(data?.product._id, data?.product.category._id);
     } catch (error) {
@@ -35,10 +34,9 @@ const ProductDetails = () => {
   // Get similar products
   const getSimilarProduct = async (pid, cid) => {
     try {
-      const { data } = await axiosInstance({
-        url:`/product/related-product/${pid}/${cid}`,
-       method:"GET",
-      });
+      const { data } = await axios.get(
+        `/api/v1/product/related-product/${pid}/${cid}`
+      );
       setRelatedProducts(data?.products);
     } catch (error) {
       console.log(error);

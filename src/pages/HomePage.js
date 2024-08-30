@@ -6,7 +6,7 @@ import { Prices } from '../components/Prices';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../context/Cart';
 import axios from 'axios';
-import apiUrl from '../config/config';
+
 
 const HomePage = () => {
   const navigate = useNavigate()
@@ -25,7 +25,7 @@ const HomePage = () => {
    const getAllCategory = async () =>{
     
     try{
-      const { data } = await axios.get(`${apiUrl}/api/v1/category/get-category`);
+      const { data } = await axios.get("/api/v1/category/get-category");
       if(data?.success){
         setCategories(data?.category)
       }
@@ -45,7 +45,7 @@ const HomePage = () => {
   const getAllProducts = async () =>{
     try{
       setLoading(true)
-      const { data } = await axios.get(`${apiUrl}/api/v1/product/product-list/${page}`);
+      const { data } = await axios.get(`/api/v1/product/product-list/${page}`);
      setLoading(false)
      setProducts(data.products)
      
@@ -59,7 +59,7 @@ const HomePage = () => {
    //get total count
   const getTotal = async () =>{
     try{
-      const { data } = await axios.get(`${apiUrl}/api/v1/product/product-count`);
+      const { data } = await axios.get("/api/v1/product/product-count");
        setTotal(data?.total)
     }catch(error){
       console.log(error)
@@ -77,7 +77,7 @@ const HomePage = () => {
     
     try{
       setLoading(true)
-      const { data } = await axios.get(`${apiUrl}/api/v1/product/product-list/${page}`);
+      const { data } = await axios.get(`/api/v1/product/product-list/${page}`);
      setLoading(false)
      setProducts([...products, ...data?.products])
     }catch(error){
@@ -115,7 +115,7 @@ const HomePage = () => {
   //get filtered products
   const filterProduct = async () =>{
     try{
-      const { data } = await axios.post(`${apiUrl}/api/v1/product/product-filters`, {
+      const { data } = await axios.post("/api/v1/product/product-filters", {
         checked,
         radio,
       });

@@ -4,6 +4,7 @@ import AdminMenu from '../../components/Layout/AdminMenu'
 import { useAuth } from '../../context/auth'
 import moment from 'moment'
 import axios from 'axios'
+import apiUrl from '../../config/config'
 import toast from 'react-hot-toast'
 import { Select } from 'antd'
 const {Option} = Select
@@ -21,7 +22,7 @@ const AdminOrders = () => {
 
   const getOrders = async () =>{
     try{
-      const { data } = await axios.get("/api/v1/auth/all-orders");
+      const { data } = await axios.get(`${apiUrl}/api/v1/auth/all-orders`);
        setOrders(data)
     }catch(error){
       console.log(error)
@@ -35,7 +36,7 @@ const AdminOrders = () => {
   //status update
   const handleChange = async (orderId,value) =>{
     try{
-      const { data } = await axios.put(`/api/v1/auth/order-status/${orderId}`, {
+      const { data } = await axios.put(`${apiUrl}/api/v1/auth/order-status/${orderId}`, {
         status: value,
       });
      getOrders();

@@ -2,6 +2,7 @@ import React,{useState,useEffect} from 'react'
 import Layout from '../components/Layout/Layout'
 import { useParams,useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import apiUrl from '../config/config'
 
 const CategoryProduct = () => {
     const params = useParams()
@@ -16,7 +17,7 @@ const CategoryProduct = () => {
     const getProductsByCategory = async () =>{
         try{
           const { data } = await axios.get(
-            `/api/v1/product/product-category/${params.slug}`
+            `${apiUrl}/api/v1/product/product-category/${params.slug}`
           );
           setProducts(data?.products)
           setCategory(data?.category)

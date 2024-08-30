@@ -4,6 +4,7 @@ import {useNavigate,useLocation} from 'react-router-dom'
 import toast from 'react-hot-toast';
 import { useAuth } from '../../context/auth';
 import axios from 'axios';
+import apiUrl from '../../config/config';
 
 const Login = () => {
     
@@ -18,7 +19,7 @@ const Login = () => {
      const handleSubmit = async (e)=>{
         e.preventDefault()
         try{
-          const res = await axios.post("/api/v1/auth/login", {
+          const res = await axios.post(`${apiUrl}/api/v1/auth/login`, {
             email,
             password,
           });

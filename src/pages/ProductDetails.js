@@ -3,7 +3,8 @@ import Layout from '../components/Layout/Layout';
 import { useParams,useNavigate } from 'react-router-dom';
 import { useCart } from '../context/Cart';
 import toast from 'react-hot-toast';
-import axios from 'axios';
+//import axios from 'axios';
+import api from '../../api';
 
 
 const ProductDetails = () => {
@@ -22,7 +23,7 @@ const ProductDetails = () => {
   // Get product details
   const getProduct = async () => {
     try {
-      const { data } = await axios.get(
+      const { data } = await api.get(
         `/api/v1/product/get-product/${params.slug}`
       );
       setProduct(data?.product);
@@ -35,7 +36,7 @@ const ProductDetails = () => {
   // Get similar products
   const getSimilarProduct = async (pid, cid) => {
     try {
-      const { data } = await axios.get(
+      const { data } = await api.get(
         `/api/v1/product/related-product/${pid}/${cid}`
       );
       setRelatedProducts(data?.products);

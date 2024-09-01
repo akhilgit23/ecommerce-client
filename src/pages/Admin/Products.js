@@ -3,7 +3,8 @@ import AdminMenu from '../../components/Layout/AdminMenu'
 import Layout from '../../components/Layout/Layout'
 import toast from 'react-hot-toast'
 import { Link } from 'react-router-dom'
-import axios from 'axios'
+//import axios from 'axios'
+import api from '../../../api'
 
 
 const Products = () => {
@@ -12,7 +13,7 @@ const Products = () => {
     //get all products
     const getAllProducts = async () =>{
         try{
-            const { data } = await axios.get("/api/v1/product/get-product");
+            const { data } = await api.get("/api/v1/product/get-product");
          setProducts(data.products)
         }catch(error){
             console.log(error)

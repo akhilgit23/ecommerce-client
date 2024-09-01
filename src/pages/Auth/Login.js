@@ -3,7 +3,8 @@ import Layout from '../../components/Layout/Layout';
 import {useNavigate,useLocation} from 'react-router-dom'
 import toast from 'react-hot-toast';
 import { useAuth } from '../../context/auth';
-import axios from 'axios';
+//import axios from 'axios';
+import api from '../../../api';
 
 
 const Login = () => {
@@ -19,7 +20,7 @@ const Login = () => {
      const handleSubmit = async (e)=>{
         e.preventDefault()
         try{
-          const res = await axios.post("/api/v1/auth/login", {
+          const res = await api.post("/api/v1/auth/login", {
             email,
             password,
           });

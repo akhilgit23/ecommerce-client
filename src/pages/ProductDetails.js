@@ -3,8 +3,9 @@ import Layout from '../components/Layout/Layout';
 import { useParams,useNavigate } from 'react-router-dom';
 import { useCart } from '../context/Cart';
 import toast from 'react-hot-toast';
-//import axios from 'axios';
 import api from '../api';
+//import axios from 'axios';
+
 
 
 const ProductDetails = () => {

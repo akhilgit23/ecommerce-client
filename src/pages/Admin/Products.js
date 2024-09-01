@@ -3,8 +3,9 @@ import AdminMenu from '../../components/Layout/AdminMenu'
 import Layout from '../../components/Layout/Layout'
 import toast from 'react-hot-toast'
 import { Link } from 'react-router-dom'
-//import axios from 'axios'
 import api from '../../api'
+//import axios from 'axios'
+
 
 
 const Products = () => {

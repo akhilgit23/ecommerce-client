@@ -2,8 +2,9 @@ import { useEffect,useState } from "react";
 import { useAuth } from "../../context/auth";
 import { Outlet } from "react-router-dom";
 import Spinner from "../Spinner";
-//import axios from "axios";
 import api from "../../api";
+//import axios from "axios";
+
 
 
 export default function PrivateRoute(){

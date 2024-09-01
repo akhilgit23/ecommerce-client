@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import { useSearch } from '../../context/Search';
 import { useNavigate } from 'react-router-dom'
-//import axios from 'axios';
 import api from '../../api';
+//import axios from 'axios';
+
 
 
 const SearchInput = () => {

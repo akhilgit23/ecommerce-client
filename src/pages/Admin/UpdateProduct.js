@@ -2,11 +2,11 @@ import React, {useState,useEffect} from 'react'
 import Layout from '../../components/Layout/Layout'
 import AdminMenu from '../../components/Layout/AdminMenu'
 import toast from 'react-hot-toast';
-//import axios from 'axios';
 import { useNavigate,useParams } from 'react-router-dom';
 import {Select} from 'antd';
-const {Option} = Select
 import api from '../../api';
+const {Option} = Select
+
 
 const UpdateProduct = () => {
     const navigate = useNavigate();

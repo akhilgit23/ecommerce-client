@@ -5,8 +5,9 @@ import {Checkbox,Radio} from 'antd'
 import { Prices } from '../components/Prices';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../context/Cart';
-//import axios from 'axios';
 import api from '../../api';
+//import axios from 'axios';
+
 
 
 const HomePage = () => {

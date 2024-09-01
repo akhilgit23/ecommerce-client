@@ -3,7 +3,7 @@ import Layout from '../../components/Layout/Layout';
 import {useNavigate} from 'react-router-dom'
 import toast from 'react-hot-toast'
 //import axios from 'axios';
-import api from '../../../api';
+import api from '../../api';
 
 
 const Register = () => {

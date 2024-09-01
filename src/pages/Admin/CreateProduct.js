@@ -4,7 +4,7 @@ import AdminMenu from '../../components/Layout/AdminMenu'
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 //import axios from 'axios';
-import api from '../../../api';
+import api from '../../api';
 import {Select} from 'antd';
 const {Option} = Select
 

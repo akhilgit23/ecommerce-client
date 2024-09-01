@@ -4,7 +4,7 @@ import UserMenu from '../../components/Layout/UserMenu'
 import { useAuth } from '../../context/auth'
 import moment from 'moment'
 //import axios from 'axios'
-import api from '../../../api'
+import api from '../../api'
 
 
 const Orders = () => {

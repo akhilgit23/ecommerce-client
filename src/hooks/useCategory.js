@@ -1,6 +1,6 @@
 import { useState,useEffect } from "react";
 //import axios from "axios";
-import api from "../../api";
+import api from "../api";
 
 
 export default function useCategory() {

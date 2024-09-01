@@ -6,7 +6,7 @@ import toast from 'react-hot-toast';
 import { useNavigate,useParams } from 'react-router-dom';
 import {Select} from 'antd';
 const {Option} = Select
-import api from '../../../api';
+import api from '../../api';
 
 const UpdateProduct = () => {
     const navigate = useNavigate();

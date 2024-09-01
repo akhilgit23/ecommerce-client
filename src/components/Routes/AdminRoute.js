@@ -3,7 +3,7 @@ import { useAuth } from "../../context/auth";
 import { Outlet } from "react-router-dom";
 import Spinner from "../Spinner";
 //import axios from "axios";
-import api from "../../../api";
+import api from "../../api";
 
 
 export default function AdminRoute(){

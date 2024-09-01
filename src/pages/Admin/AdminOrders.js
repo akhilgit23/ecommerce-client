@@ -4,7 +4,7 @@ import AdminMenu from '../../components/Layout/AdminMenu'
 import { useAuth } from '../../context/auth'
 import moment from 'moment'
 //import axios from 'axios'
-import api from '../../../api'
+import api from '../../api'
 import toast from 'react-hot-toast'
 import { Select } from 'antd'
 const {Option} = Select

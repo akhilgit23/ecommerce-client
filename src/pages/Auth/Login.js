@@ -4,7 +4,7 @@ import {useNavigate,useLocation} from 'react-router-dom'
 import toast from 'react-hot-toast';
 import { useAuth } from '../../context/auth';
 //import axios from 'axios';
-import api from '../../../api';
+import api from '../../api';
 
 
 const Login = () => {

@@ -196,7 +196,7 @@ const HomePage = () => {
    {products?.map((p) => (
         <div className="card m-2" style={{width: '18rem', height: '100%'}}>
             <img src=
-            {`/api/v1/product/product-photo/${p._id}`} 
+            {`https://ecommerce-server-coral-two.vercel.app/api/v1/product/product-photo/${p._id}`} 
             className="card-img-top "
              alt={p.name} style={{height: '200px', objectFit: 'cover'}}  />
             

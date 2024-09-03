@@ -39,7 +39,7 @@ const CategoryProduct = () => {
             <div className='d-flex flex-wrap'>
     {products?.map((p) => (
         <div className="card m-2" style={{width: '18rem', height: '100%'}}>
-            <img src={`/api/v1/product/product-photo/${p._id}`} className="card-img-top" alt={p.name} style={{height: '200px', objectFit: 'cover'}}  />
+            <img src={`https://ecommerce-server-coral-two.vercel.app/api/v1/product/product-photo/${p._id}`} className="card-img-top" alt={p.name} style={{height: '200px', objectFit: 'cover'}}  />
             
             <div className="card-body d-flex flex-column">
                 <h5 className="card-title text-start">{p.name}</h5>

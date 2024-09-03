@@ -58,7 +58,7 @@ const ProductDetails = () => {
       <div className='row container product-details mx-2 mt-5 py-5'>
         <div className='col-md-6 card'>
           <img 
-            src={`/api/v1/product/product-photo/${product._id}`}
+            src={`https://ecommerce-server-coral-two.vercel.app/api/v1/product/product-photo/${product._id}`}
             className="card-img-top" 
             alt={product.name}
             height='350'

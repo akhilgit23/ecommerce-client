@@ -66,7 +66,7 @@ const Orders = () => {
                         o?.products?.map((p,i) => (
                             <div className='row mb-2 p-3 card flex-row'>
                                 <div className='col-md-4 card  d-flex align-items-center justify-content-center '>
-                                <img src={`/api/v1/product/product-photo/${p._id}`}
+                                <img src={`https://ecommerce-server-coral-two.vercel.app/api/v1/product/product-photo/${p._id}`}
                                  className="card-img-top" 
                                  alt={p.name} 
                                  width="100px"

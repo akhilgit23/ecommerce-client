@@ -41,7 +41,7 @@ const Products = () => {
                         <Link key={p._id} to={`/dashboard/admin/product/${p.slug}`}
                          className='product-link mb-2'>
                          <div className="card m-2 " style={{width: '18rem',height: '100%'}} >
-                 <img src={`/api/v1/product/product-photo/${p._id}`}
+                 <img src={`https://ecommerce-server-coral-two.vercel.app/api/v1/product/product-photo/${p._id}`}
                   className="card-img-top" alt={p.name} style={{height: '200px', objectFit: 'cover'}} />
                  <div className="card-body">
                  <h5 className="card-title">{p.name}</h5>

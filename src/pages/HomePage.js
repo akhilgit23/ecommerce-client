@@ -6,7 +6,7 @@ import { Prices } from '../components/Prices';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../context/Cart';
 import api from '../api';
-//import axios from 'axios';
+
 
 
 

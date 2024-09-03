@@ -5,6 +5,7 @@ import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 import {Select} from 'antd';
 import api from '../../api';
+
 const {Option} = Select
 
 const CreateProduct = () => {

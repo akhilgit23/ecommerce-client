@@ -5,7 +5,7 @@ import toast from 'react-hot-toast';
 import CategoryForm from '../../components/Form/CategoryForm';
 import {Modal} from 'antd'
 import api from '../../api';
-//import axios from 'axios';
+
 
 
 const CreateCategory = () => {

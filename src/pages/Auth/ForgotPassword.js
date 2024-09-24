@@ -64,7 +64,7 @@ const ForgotPassword = () => {
      onChange={(e) => setAnswer(e.target.value)}
      className="form-control" 
      id="exampleInputanswer" 
-     placeholder='Enter Your Secret Answer'
+     placeholder='Enter Your Secret Color'
      required
      />
     

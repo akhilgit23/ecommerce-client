@@ -86,18 +86,17 @@ const Register = () => {
       />
   </div>
   <div className="mb-3">
-   
-    <input
-     type="text" 
-     value={phone}
-     onChange={(e) => setPhone(e.target.value)}
-     className="form-control" 
-     id="exampleInputphone"
-     placeholder='Enter Your Phone'
-     required
-     />
-    
-  </div>
+  <input
+    type="tel"
+    value={phone}
+    onChange={(e) => setPhone(e.target.value)}
+    className="form-control"
+    id="exampleInputphone"
+    placeholder='Enter Your Phone'
+    pattern="[0-9]{10}" 
+    required
+  />
+</div>
   
   <div className="mb-3">
     

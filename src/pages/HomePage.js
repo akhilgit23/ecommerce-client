@@ -133,8 +133,8 @@ const HomePage = () => {
       <div id="productCarousel" className="carousel slide mt-5 py-3" data-bs-ride="carousel" data-bs-interval={3000}>
   <div className="carousel-inner d-flex">
     
-    <div className="carousel-item">
-      <img src="/images/sale.jpg" className="d-block" alt="Second slide"
+    <div className="carousel-item active">
+      <img src="/images/sale.jpg" className="d-block" alt="First slide"
         style={{ height: '400px', width: '100%', objectFit: 'cover' }} />
     </div>
     <div className="carousel-item">
